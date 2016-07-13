@@ -1,0 +1,51 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="UTF-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1"> 
+<title>Angular js</title>  
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<script src="angular-1.5.0/angular.min.js"></script>  
+<script src="login/login.js"></script>  
+<style type="text/css">
+		.login-form {
+			max-width: 300px;
+			margin: 0 auto;
+		}
+		#inputUsername {
+		  margin-bottom: -1px;
+		  border-bottom-right-radius: 0;
+		  border-bottom-left-radius: 0;
+		}
+		#inputPassword {
+			border-top-left-radius: 0;
+  			border-top-right-radius: 0;
+		}
+	</style>
+</head>  
+<body>  
+ <div class="container" ng-app = "mainApp" ng-controller = "loginController as loginCon">
+       <form class="login-form" name = "loginForm" ng-submit="loginCon.postForm()" novalidate>
+       	<h2>Please sign in</h2>
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="text" id="inputUsername" class="form-control" placeholder="Username" ng-model = "loginCon.userName" required autofocus>
+                  <span style = "color:red" ng-show = "loginForm.userName.$dirty && loginForm.userName.$invalid">
+                     <span ng-show = "loginForm.userName.$error.required">User Name is required.</span>
+                  </span>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model = "loginCon.password" required>
+            <span style = "color:red" ng-show = "loginForm.password.$dirty && loginForm.password.$invalid">
+               <span ng-show = "loginForm.password.$error.required">Password is required.</span>
+            </span>
+        <button class="btn btn-lg btn-primary btn-block" ng-click = "loginCon.reset()">Reset</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled = "loginForm.userName.$dirty &&
+               loginForm.userName.$invalid || loginForm.password.$dirty &&
+               loginForm.password.$invalid" ng-click="loginCon.submit()">Sign in</button>
+              
+         <div class="alert alert-danger" role="alert" ng-show="errorMsg">{{errorMsg}}</div>
+         {{loginCon.credentials()}}
+      </form>
+ </div>
+</body>  
+</html> 

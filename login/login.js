@@ -16,8 +16,9 @@ var mainApp = angular.module("mainApp", []);
 	   }
 	   
 	   this.reset = function() {
-		   cont.userName = "";
-		   cont.password = "";
+		   return {
+		  templateURL = "C:\Tools\eclipse-jee-mars-R-win32-x86_64\eclipseWS\angular\WebContent\index.html";
+		   }
 	   }
 	   
 	   this.submit = function() {
@@ -26,3 +27,5 @@ var mainApp = angular.module("mainApp", []);
 				 "password = "+cont.password);
 	   }
  });
+ 
+ 

@@ -5,7 +5,7 @@ mainApp.config(['$routeProvider',function($routeProvider) {
         controller: 'clair.controller.loginController'
      })
     .when('/loginSuccess', {
-	    templateUrl: 'loginValidation.html',
+	    templateUrl: 'homemain.html',
 	    //controller: 'clair.controller.loginController'
      })
      .when('/loginFailure', {

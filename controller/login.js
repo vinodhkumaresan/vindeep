@@ -1,6 +1,6 @@
 var mainApp = angular.module('clair.controller.loginController', []);
          
- mainApp.controller('clair.controller.loginController', ['$location', function($location) {
+ mainApp.controller('clair.controller.loginController', ['$location', '$window', function($location, $window) {
        
 	   var cont = this;
 	   cont.userName;
@@ -22,6 +22,7 @@ var mainApp = angular.module('clair.controller.loginController', []);
 	   this.submit = function() {
 		   
 		   if(cont.userName == 'admin' && cont.password == 'admin'){
+			  // $window.location = "#/waterwiserhome.html";
 			   $location.path('/loginSuccess');
 		   }
 		   else{

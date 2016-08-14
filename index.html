@@ -25,6 +25,10 @@
 	<!-- Controller -->
 	<script src="controller/maincontroller.js"></script>
 	<script src="controller/login.js"></script>
+	<script src="controller/wateranalysiscontroller.js"></script>
+	<script src="controller/cwcontroller.js"></script>
+	<script src="controller/chemicalanalysiscontroller.js"></script>
+	<script src="controller/angularChart.js"></script>
 	
 	<!-- MainApp -->
 	<script src="main/app.js"></script>
@@ -34,25 +38,19 @@
 
 	<!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script src="js/highcharts.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
+	
+      	
+	
 </head>
 
 <body ng-app = "mainApp">
 
-<div class="col-sm-12">
-	</br></br></br></br></br></br>
-	<div class="col-sm-4"></div>
-		<div class="col-lg-4 col-md-8 col-xs-6">
-         <img class="img-responsive center-block"   width="200" height="100">
-        </div>
-	</div>
-	
 	<div ng-view></div>
 	
-</div>	
+ 	<!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script> 
 
 </body>
 </html>
